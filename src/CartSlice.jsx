@@ -7,7 +7,7 @@ export const CartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-        const {name, cost, image} = state[action.payload];
+        const {name, cost, image} = action.payload;
         //This checks if the item is already in the cart by comparing the names
         const itemExists = state.items.find(item => item.name === name);
         if (itemExists) {
