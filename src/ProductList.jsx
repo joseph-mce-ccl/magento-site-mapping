@@ -278,10 +278,17 @@ function ProductList({ onHomeClick }) {
                         <div key={categoryIndex}>
                             <h2>{category.category}</h2> {/*Displays category header*/}
                             <div className="product-list">
-                                <p className="product-title">{category.name}</p>
-                            </div>  
-                </div>
-                ))}
+                                {category.plants.map((plant, plantIndex) => (
+                                    <div className="product-card" key={plantIndex}>
+                                        <p className="product-title">{plant.name}</p>
+                                        <img className="product-image" src={plant.image}/>
+                                        <p>{plant.description}</p>
+                                        <p className="product-price">{plant.cost}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
             ) : (
