@@ -12,9 +12,10 @@ const CartItem = ({ onContinueShopping }) => {
     //Initilise total variable
     let total = 0;
     //for each item in cart, multiply the total by the quantity and add in back into the total variable
-    //I still need to parse the cost string
     cart.forEach((item) => {
-    total += item.cost * item.quantity
+    //Convert string to number
+    const numericalCost = parseFloat(item.cost.substring(1));
+    total += numericalCost * item.quantity;
     });
   };
 
