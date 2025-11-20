@@ -267,6 +267,13 @@ function ProductList({ onHomeClick }) {
             [product.name]: true,
         }));
     };
+    //Remove item from cart when it is reduced to 0 or deleted
+    const handleRemoveFromCart = (product) => {
+        setAddedToCart((prevState) => ({
+            ...prevState,
+            [product.name]: false,
+        }));
+    };
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -313,7 +320,7 @@ function ProductList({ onHomeClick }) {
                 </div>
 
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={handleContinueShopping} onRemoveFromCart={handleRemoveFromCart}/>
             )}
         </div>
     );
