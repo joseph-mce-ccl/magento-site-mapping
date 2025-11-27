@@ -1,1 +1,1 @@
-# coding-project-template
+# Magento Site Mapping
